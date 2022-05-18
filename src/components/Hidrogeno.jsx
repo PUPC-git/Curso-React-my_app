@@ -1,4 +1,5 @@
 import React from 'react';
+import Autonomia from './Autonomia';
 
 const styles = {
     heiht: 250,
@@ -19,6 +20,7 @@ class Hidrogeno extends React.PureComponent {
                 </p>
                 <img style={ styles }
                     src='https://noticias.mapfre.com/media/2019/01/HidrogenoCombustible800x472.jpg' alt=''></img>
+                <Autonomia km='500km' />
             </div>
         )
     }
