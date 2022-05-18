@@ -4,6 +4,7 @@ function TituloBateriaLitio() {
     return (<h3>Baterias de Litio</h3>)
 }
 
+//componente stateless o funcional
 function BateriaLitio() {
     return (
         <div>
