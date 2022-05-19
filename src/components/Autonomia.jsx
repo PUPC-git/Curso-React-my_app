@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+//Componente stateful o de clase
 class Autonomia extends Component {
     render() {
         return (

@@ -5,6 +5,7 @@ import Hidrogeno from './Hidrogeno';
 
 
 //Componente stateful o de clase
+//Componente contenedor, al no tener logica, solo mostramos el resto de componentes
 class Articulo extends Component {
     render() {
         return (
