@@ -11,7 +11,8 @@ function TituloHidrogeno() {
     return (<h3>Baterias de Hidrógeno</h3>)
 }
 
-//Componente puro
+//Componente puro, es recomendables usarlos cuando solo queremos mostrar informacion inmutable
+//sin un estado
 class Hidrogeno extends React.PureComponent {
     render() {
         return (

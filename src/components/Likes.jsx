@@ -7,6 +7,7 @@ class Likes extends Component {
             contadorLikes: 0
         }
     }
+    //datos privados del componente
     subirLikes = () => {
         this.setState({
             contadorLikes: 1
