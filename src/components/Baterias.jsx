@@ -15,7 +15,7 @@ function BateriaLitio() {
             Gracias a las nuevas tecnologias que afectan a las baterías,
             la autonomia de los coches electricos está aumentrando a pasos agigantados.
             </p>
-            <Autonomia km='400km' />
+            <Autonomia km={100} />
             <Carga carga='156kw'/>
         </div>
     );
