@@ -3,11 +3,28 @@ import PropTypes from 'prop-types';
 
 //Componente stateful o de clase
 class Autonomia extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {encendido: true};
+        this.manejarPulsacion = this.manejarPulsacion.bind(this);
+    }
+
+    manejarPulsacion(event) {
+        this.setState((prevState, props) => ({
+            encendido: !prevState.encendido
+        }));
+    }
+
     render() {
         return (
-            <ul>
-                <li>Autonomia: {this.props.km} km </li>
-            </ul>
+            <div>
+                <ul>
+                    <li>Autonomia: {this.props.km} km </li>
+                </ul>
+                <button onClick={this.manejarPulsacion}>
+                    {this.state.encendido ? 'Activado' : 'Desactivado'}
+                </button>
+            </div>
         )
     }
 }

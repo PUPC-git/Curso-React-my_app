@@ -11,6 +11,15 @@ function Bitcoin () {
     //es un hook de estado
     const [bitcoin, setBitcoin] = useState(0);
 
+    //Control de eventos, metodo recomendable (pulsaciones onClick)
+    const manejarPulsacion = (event) => {
+        //binding entre la vista y el controlador
+        //evitamos el comportamiento por defecto del evento, en este caso se evita 
+        //redireccionamiento a google desde el a href
+        event.preventDefault();
+        console.log("objeto evento: ", event);
+    }
+
     //definimos un hook de ciclo de vida, se ejecuta cada vez que hay un cambio
     useEffect(() => {
         console.log('El componente se ha renderizado')
@@ -25,6 +34,11 @@ function Bitcoin () {
             <button onClick={() => setBitcoin(bitcoin -1)}>
                 Disminuir  
             </button>
+
+            <br />
+            <button onClick={(event) => {console.log("Objeto evento: ", event)}}>Púlsame</button>
+            <button onClick={manejarPulsacion}>Pulsame</button>
+            <a href="https://www.google.es" onClick={manejarPulsacion}>Ir a Google</a>
         </div>
     )
 
