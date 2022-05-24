@@ -6,6 +6,8 @@ class Autonomia extends Component {
     constructor(props) {
         super(props);
         this.state = {encendido: true};
+
+        //evento con un metodo controlador
         this.manejarPulsacion = this.manejarPulsacion.bind(this);
     }
 
