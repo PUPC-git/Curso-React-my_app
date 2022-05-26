@@ -17,7 +17,7 @@ function Formulario() {
 
     //creacion de contador por ciclo de vida
     const [contador, setContador] = useState(0);
-    //creacion de contador por referencias a modo de estados
+    //creacion de contador por referencias a modo de estados para asociarlo a un elemento dal DOM
     const contador2 = useRef(0);
     
     const manejarPulsacion = (event) => {
@@ -25,6 +25,23 @@ function Formulario() {
         //para generar un valor ramdom por cada pulsacion y probar que el contador
         //por referencia no esta generando ningun bucle
         //setResultado(Math.random() + "");
+    }
+
+    //Eventos focus y blur para controlar cuando tiene o no el foco en un elemento
+    let manejarFoco = (event) => {        
+        if(event.type === 'focus') console.log("El elemento tiene foco");
+        if(event.type === 'blur') console.log("El elemento pierde el foco");
+    }
+
+    //eventos para el portapapeles
+    /*
+    onCopy
+    onCut
+    onPaste
+    */
+    let handlerClipBoard = (event) => {
+        let data = event.clipboardData.getData('Text');
+        console.log(`Texto en el clipboard: ${data || "<Sin datos>"}`);
     }
 
     const manejarPulsacion2 = (event) => {
@@ -52,7 +69,10 @@ function Formulario() {
                     </td>
                     <td>
                         <input placeholder="Introduce el nombre"
-                        onChange={(e) => {setNombre(e.target.value)}}></input>
+                        onChange={(e) => {setNombre(e.target.value)}}
+                        onFocus={manejarFoco} onBlur={manejarFoco}
+                        onPaste={handlerClipBoard} 
+                        ></input>
                     </td>
                 </tr>
                 <tr>
